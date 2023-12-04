@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  overflow: hidden;
+  color: white;
+  font-size: 2rem;
+}
+
+main {
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  font-size: 10px;
+  width: 40em;
+  height: 40em;
+  position: relative;
+}
+
+.sun {
+  position: absolute;
+  top: 15em;
+  left: 15em;
+  width: 15em;
+  height: 15em;
+  background-color: rgba(247, 205, 19, 0.945);
+  border-radius: 50%;
+  box-shadow: 0 0 3em white;
+}
+
+.venus,.moon {
+  position: absolute;
+  border-style: solid;
+  /* border-color: white transparent transparent transparent; */
+  border-width: 0.1em 0.1em 0 0;
+  border-radius: 50%;
+}
+
+.mercury,.moon {
+  position: absolute;
+  border-style: solid;
+  /* border-color: white transparent transparent transparent; */
+  border-width: 0.1em 0.1em 0 0;
+  border-radius: 50%;
+}
+
+.venus {
+  top: 6em;
+  left: 6em;
+  width: 30em;
+  height: 30em; 
+  animation: orbit 10s linear infinite;   
+}
+
+.mercury {
+  top: 6em;
+  left: 6em;
+  width: 30em;
+  height: 30em; 
+  animation: orbit 20s linear infinite;   
+}
+
+.moon {
+  top: 0;
+  right: 0;
+  width: 8em;
+  height: 8em; 
+  animation: orbit 4s linear infinite;
+}
+
+.venus::before,
+.moon::before {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.mercury::before {
+  top: 4em;
+  right: 4em;
+  width: 5em;
+  height: 5em;
+  background-color: rgba(167, 30, 6, 0.952)
+}
+
+.venus::before {
+  top: 3em;
+  right: 3em;
+  width: 3em;
+  height: 3em;
+  background-color: rgb(217, 255, 0);    
+}
+
+.moon::before {
+  top: 0.8em;
+  right: 0.2em;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: silver;
+}
+
+/* This code defines a CSS animation using keyframes. The animation is named "orbit," 
+and it specifies a rotation transformation. In this case, the rotation is set to 360 degrees,
+which means the element to which this animation is applied 
+will rotate once around its center in a clockwise direction. The to keyword indicates the end of the animation, 
+so it will smoothly rotate to the specified angle. */
+
+@keyframes orbit {
+  to {
+      transform: rotate(360deg);
+  }
+}
